@@ -1,5 +1,5 @@
 App.Routers.Restaurants =
-  initialize = ->
+  initialize: ->
 	
   routes:
     "": "index" # root forward to index action
