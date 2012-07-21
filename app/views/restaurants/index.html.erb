@@ -1,7 +1,16 @@
+<script type="text/json" id="bootstrap">
+  {
+    "restaurants": <%= @restaurants.to_json %>
+  }
+</script>
 <%= content_for :javascript do -%>
   <script type="text/javascript">
     $(function () {
-      App.initialize();
+      var div = $('<div></div>');
+      div.html($('#bootstrap').text());
+      var data = JSON.parse(div.text());
+	
+      App.initialize(data);
     });
   </script>
 <% end %>
