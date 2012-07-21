@@ -6,6 +6,7 @@ gem 'sqlite3'
 # backbone 
 gem 'rails-backbone'
 gem 'ejs'
+gem 'backbone-support'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
