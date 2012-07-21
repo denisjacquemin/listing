@@ -1,25 +1,18 @@
-App.Views.RestaurantsIndex = Support.CompositeView.extend({
-  initialize: function() {
-    _.bindAll(this, "render");
-    this.collection.on("add", this.render);
-  },
+App.Views.RestaurantsIndex = Support.CompositeView.extend
+  
+  initialize: ->
 
-  render: function () {
-    this.renderTemplate();
-    this.renderTasks();
-    return this;
-  },
+  render: ->
+    this.renderTemplate()
+    this.renderRestaurants()
+    return this
 
-  renderTemplate: function() {
-    this.$el.html(JST['tasks/index']({ tasks: this.collection }));
-  },
+  renderTemplate: ->
+    this.$el.html(JST['restaurants/index']({ restaurants: this.collection }))
 
-  renderTasks: function() {
-    var self = this;
-    this.collection.each(function(task) {
-      var row = new ExampleApp.Views.TaskItem({ model: task });
-      self.renderChild(row);
-      self.$('tbody').append(row.el);
-    });
-  }
-});
+  renderRestaurants: ->
+    self = this
+    this.collection.each (restaurant) ->
+      row = new App.Views.RestaurantItem({ model: restaurant })
+      self.renderChild(row)
+      self.$('tbody').append(row.el)
