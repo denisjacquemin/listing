@@ -1,6 +1,8 @@
 //= require jquery
 //= require jquery_ujs
+
 //= require underscore
+//= require json2
 //= require backbone
 //= require backbone-support
 
