@@ -1,6 +1,8 @@
 App.Routers.Restaurants =
-  initialize: ->
-	
+  initialize: (options) ->
+    this.el = $('#restaurants');
+    this.collection = options.collection
+
   routes:
     "": "index" # root forward to index action
   
