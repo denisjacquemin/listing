@@ -1,6 +1,6 @@
 App.Routers.Restaurants =
   initialize: (options) ->
-    this.el = $('#restaurants');
+    this.el = $('#restaurants')
     this.collection = options.collection
 
   routes:
